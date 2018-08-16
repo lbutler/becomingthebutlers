@@ -1,0 +1,132 @@
+body {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.mui-panel--main-topmargin {
+    margin-top: 20px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+
+.fancy-text {
+    font-family:  'Parisienne', cursive;
+  
+  }
+
+
+  .mui--text-body1, .mui--text-display2 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: 300;
+  }
+
+  .background-pattern{
+
+  background: url('../img/background/cream_pixels.png');
+  }
+
+  .id-do {
+    padding-top: 25px;
+    transform: rotate(-5deg);
+    margin: 1.8rem;
+    font-size: 5rem;
+}
+
+
+header.top {
+    text-align: center;
+}
+
+header.top h3 {
+    margin: 0;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+header.top h3 span {
+    background: url(../img/background/cream_pixels.png);
+    position: relative;
+    z-index: 2;
+
+
+    font-size: 1.8rem;
+}
+
+/*header.top h3:after, header.top h3:before {
+    display: block;
+    z-index: 1;
+    background: #000;
+    position: absolute;
+    width: 400%;
+    height: 1px;
+    content: '';
+    top: 17px;
+    margin-left: -150%;
+}
+*/
+.rsvp-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #0b497b;
+}
+
+
+.rsvp-button:active,.rsvp-button:focus ,.rsvp-button:hover  {
+    background-color: #0e68b1;
+
+}
+
+.no-seats {
+    font-weight: 800;
+}
+
+.hr {
+    width:100%;
+    max-width: 386px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hr-and {
+    width: 25%;
+    padding-bottom: 5px;
+}
+
+.last-line {
+    margin-bottom: 20px;
+}
+
+
+header.top h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+p {
+    margin: 0;
+}
+
+@media (min-width: 544px) {
+    .mui-container {
+        max-width: 570px;
+    }
+    }
+
+
+@media (min-width: 768px) {
+    .mui-container {
+        max-width: 600px;
+    }
+    }
+
+
+
+
+
