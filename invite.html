@@ -9,7 +9,11 @@
     <link href="//cdn.muicss.com/mui-0.9.39/css/mui.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="assets/css/invite.css">
     <link href="https://fonts.googleapis.com/css?family=Parisienne|Roboto:100,300,400" rel="stylesheet">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//cdn.muicss.com/mui-0.9.39/js/mui.min.js"></script>
+    <script type="text/javascript" src="assets/invite.js"></script>
+
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65873036-4"></script>
     <script>
@@ -88,12 +92,24 @@
                 <div class="mui--text-headline fancy-text">
                     September 20th
                 </div>
-                <a href="https://goo.gl/forms/vMlXWlX7KCnZE8wh1">
-                    <button class="rsvp-button mui-btn mui-btn--primary">RSVP Now</button>
-                </a>
+
+                <button class="rsvp-button mui-btn mui-btn--primary" onclick="setRSVPCookie()">RSVP Now</button>
+
 
                 <p>WE HAVE RESERVED
                     <span class="no-seats">2</span> SEATS IN YOUR HONOUR</p>
+
+
+            </div>
+
+            <div class="mui--text-body1">
+
+
+                <p>FOR MORE INFORMATION VISIT</p>
+                <p>
+                    <a href="/">BECOMINGTHEBUTLERS.COM</a>
+                </p>
+
 
             </div>
 
@@ -106,6 +122,7 @@
 
 
     </div>
+
 </body>
 
 </html>

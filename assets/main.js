@@ -2,11 +2,15 @@
 google.maps.event.addDomListener(window, 'load', init);
 
     function init() {
+        setDaysToWedding()
+        checkIfOpenRSVP()
+
         // Basic options for a simple Google Map
         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
         var mapOptions = {
             // How zoomed in you want the map to start at (always required)
             zoom: 15,
+            disableDefaultUI: true,
             // The latitude and longitude to center the map (always required)
             center: new google.maps.LatLng(43.708567,-79.389672), // New York
             // How you would like to style the map. 
@@ -56,3 +60,84 @@ google.maps.event.addDomListener(window, 'load', init);
 
     }
 
+    function setDaysToWedding() {
+
+        var rsvpSent = getCookie('rsvpSent');
+        var days = Math.round(Math.abs(((new Date(2018,09,20)).getTime() - (new Date).getTime() ) / (24*60*60*1000)))
+
+        if (rsvpSent != 'true' && days > 27 ) {
+            $("#daysToWedding").text(days)
+            $("#rsvp-alert").show()
+            daysToWedding
+        }
+    }
+
+    function checkIfOpenRSVP() {
+
+
+        var rsvpOpen = getCookie('rsvpOpen');
+
+        if (rsvpOpen) {
+            $('#myModal').modal('show');
+            eraseCookie('rsvpOpen');
+        }
+    }
+
+    function postToGoogle() {
+
+        setCookie('rsvpSent',true,100);
+
+        $('#submitToGoogle').prop('disabled', true);
+        $('#spinner').show();
+        $('#rsvpForm').hide();
+
+        var field1 = $("input[type='radio'][name='optionsRadios']:checked").val();
+        var field2 = $('#guestNames').val();
+        var field3 = $('#dietary').val();
+        var field4 = $('#songRequest').val();
+     
+        $.ajax({
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSfQLQAw7xe0NeB6histItw_5mWyLnLEssA7_LlXnflFvPOZjQ/formResponse",
+          data: {
+            "entry.877086558": field1,
+            "entry.559352220": field2,
+            "entry.1751303409": field3,
+            "entry.795203302":field4
+          },
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function() {
+                $("#rsvp-alert").hide()
+                $('#myModal').modal('hide');
+            },
+            200: function() {
+                console.log("Return 200")
+            }
+          }
+        });
+      }
+
+
+      function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {   
+        document.cookie = name+'=; Max-Age=-99999999;';  
+    }
