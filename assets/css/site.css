@@ -31,7 +31,6 @@ body {
   min-height: 100%;
   padding-top: 40px;
   padding-bottom: 20px;
-  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -210,9 +209,10 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-
   display: none;
+
 }
+
 
 .alert {
   margin: 0 auto;

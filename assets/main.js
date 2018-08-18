@@ -63,7 +63,8 @@ google.maps.event.addDomListener(window, 'load', init);
     function setDaysToWedding() {
 
         var rsvpSent = getCookie('rsvpSent');
-        var days = Math.round(Math.abs(((new Date(2018,09,20)).getTime() - (new Date).getTime() ) / (24*60*60*1000)))
+        var days = Math.floor(Math.abs(((new Date(2018,09,20)).getTime() - (new Date).getTime() ) / (24*60*60*1000)))
+        
 
         if (rsvpSent != 'true' && days > 27 ) {
             $("#daysToWedding").text(days)
