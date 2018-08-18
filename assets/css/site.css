@@ -30,9 +30,7 @@ body {
 .back {
   min-height: 100%;
   padding-top: 40px;
-  margin-bottom: -60px;
-  padding-bottom: 100px;
-  display: flex;
+  padding-bottom: 20px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -116,16 +114,7 @@ h3 {
 }
 
 
-.map-container {
-  height: 300px;
-  margin-top: 40px;
-}
 
-
-#map {
-  width: 100%;
-  height: 100%;
-}
 
 footer {
   height: 60px;
@@ -136,10 +125,33 @@ footer {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
+.map-container {
+  height: 300px;
+  margin-top: 40px;
+  width: 100%;
+
+}
+
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 992px) {
   .map-container{
       margin-top: 0px;
       min-height: 520px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      margin-top: 0px;
+      z-index: -1;
+      padding: 0;
+      width: 50%;
+
+     padding-left: 15px;
   }
 
   h3 {
@@ -190,6 +202,52 @@ footer {
 
 }
 
+.fixed-alert {
+  margin-top: 5px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+
+}
+
+
+.alert {
+  margin: 0 auto;
+  width: 450px;
+  text-align: center;
+}
+
+.alert-wedding-rsvp {
+  color: #fff;
+  background-color: #0b497b;
+  border-color: #0b497b;
+}
+
+.alert-wedding-rsvp a {
+  color: #fff;
+
+}
+
+.close:hover, .close:focus {
+  color: #fff;
+}
+
+a { color:  #0b497b}
+
+.glyphicon.normal-right-spinner {
+  -webkit-animation: glyphicon-spin-r 2s infinite linear;
+  animation: glyphicon-spin-r 2s infinite linear;
+}
+
+.spinner {
+  text-align: center;
+  font-size: 40px;
+  padding: 100px 0px;
+  display:none;
+}
 
 @-webkit-keyframes bounce {
   0% { top: 0; }
@@ -222,3 +280,26 @@ footer {
   100% { top: 0; }
 }
 
+@-webkit-keyframes glyphicon-spin-r {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+  }
+}
+
+@keyframes glyphicon-spin-r {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+  }
+}

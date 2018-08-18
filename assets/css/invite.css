@@ -113,15 +113,26 @@ p {
     margin: 0;
 }
 
+.modal {
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 570px;
+}
+
+a { color:  #0b497b}
+
+
+
 @media (min-width: 544px) {
-    .mui-container {
+    body .mui-container {
         max-width: 570px;
     }
     }
 
 
 @media (min-width: 768px) {
-    .mui-container {
+    body .mui-container {
         max-width: 600px;
     }
     }
